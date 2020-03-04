@@ -44,6 +44,11 @@ t[#t+1] = Def.HelpDisplay {
 	SelectMenuClosedMessageCommand=function(s) s:stoptweening():bouncebegin(0.2):zoomy(0.75) end
 }
 
+-- DensityGraph
+for player in ivalues({PLAYER_1, PLAYER_2}) do
+        t[#t+1] = LoadActor("./DensityGraph.lua", player, 218, 180, 600, 200, 10)
+end
+
 GAMESTATE:Env()["gnNextScreen"] = "ScreenPlayerOptions"
 t[#t+1] = Def.ActorFrame{
     OnCommand=function(s)
